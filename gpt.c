@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 double hap(double a, double b) {
     return a + b;
@@ -51,9 +52,10 @@ int main() {
                     return 1;
             }
 
-            printf("= %.2f\n", result);
+            printf("= %lf\n", result);
             first = 0;
-        } else {
+        }
+        else {
             printf("계산기 (초기화 c, 종료 q): ");
             scanf(" %c", &op);
             if (op == 'q' || op == 'Q') {
@@ -82,7 +84,7 @@ int main() {
                     continue;
             }
 
-            printf("= %.2f\n", result);
+            printf("= %lf\n", result);
         }
     }
 
