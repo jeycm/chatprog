@@ -16,7 +16,7 @@ double mul(double a, double b) {
 
 double divide(double a, double b) {
     if (b == 0) {
-        printf("Error: Division by zero.\n");
+        printf("0으로 나눌 수 없습니다.\n");
         exit(1);
     }
     return a / b;
@@ -48,7 +48,7 @@ int main() {
                 case '/': result = divide(a, b); break;
                 case '^': result = squ(a, b); break;
                 default:
-                    printf("Error: Invalid operator '%c'.\n", op);
+                    printf("잘못된 연산자로 인한 오류 '%c'.\n", op);
                     return 1;
             }
 
@@ -80,7 +80,7 @@ int main() {
                 case '/': result = divide(result, b); break;
                 case '^': result = squ(result, b); break;
                 default:
-                    printf("Error: Invalid operator '%c'.\n", op);
+                    printf("잘못된 연산자로 인한 오류 '%c'.\n", op);
                     continue;
             }
 
