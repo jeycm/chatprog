@@ -21,6 +21,12 @@ double divide(double a, double b) {
     return a / b;
 }
 
+double squ(double a, double b) {
+    double result;
+    result = pow(a, b);
+    return result;
+}
+
 int main() {
     double a, b, result;
     char op;
@@ -39,6 +45,7 @@ int main() {
                 case '-': result = minus(a, b); break;
                 case '*': result = mul(a, b); break;
                 case '/': result = divide(a, b); break;
+                case '^': result = squ(a, b); break;
                 default:
                     printf("Error: Invalid operator '%c'.\n", op);
                     return 1;
@@ -69,6 +76,7 @@ int main() {
                 case '-': result = minus(result, b); break;
                 case '*': result = mul(result, b); break;
                 case '/': result = divide(result, b); break;
+                case '^': result = squ(result, b); break;
                 default:
                     printf("Error: Invalid operator '%c'.\n", op);
                     continue;
