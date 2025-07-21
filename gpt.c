@@ -28,10 +28,21 @@ double squ(double a, double b) {
     return result;
 }
 
+double lo(double a, double b) {
+    if (a <= 0 || b <= 0) {
+        printf("로그는 양수만 가능합니다.\n");
+        exit(1);
+    }
+    return log10(b) / log10(a);
+}
+
 int main() {
     double a, b, result;
     char op;
     int first = 1;
+
+    printf("계산방법\n");
+    printf("+(더하기), -(빼기), *(곱하기), /(나누기), ^(제곱), l(로그 밑부터 입력)\n");
 
     while (1) {
         if (first) {
@@ -47,6 +58,8 @@ int main() {
                 case '*': result = mul(a, b); break;
                 case '/': result = divide(a, b); break;
                 case '^': result = squ(a, b); break;
+                case 'l': result = lo(a, b); break;
+                case 'L': result = lo(a, b); break;
                 default:
                     printf("연산부호를 찾을 수 없습니다. '%c'.\n", op);
                     return 1;
@@ -79,6 +92,8 @@ int main() {
                 case '*': result = mul(result, b); break;
                 case '/': result = divide(result, b); break;
                 case '^': result = squ(result, b); break;
+                case 'l': result = lo(a, b); break;
+                case 'L': result = lo(a, b); break;
                 default:
                     printf("연산부호를 찾을 수 없습니다. '%c'.\n", op);
                     continue;
