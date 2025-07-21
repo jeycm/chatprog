@@ -16,7 +16,7 @@ double mul(double a, double b) {
 
 double divide(double a, double b) {
     if (b == 0) {
-        printf("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
+        printf("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.\n");
         exit(1);
     }
     return a / b;
@@ -35,9 +35,9 @@ int main() {
 
     while (1) {
         if (first) {
-            printf("ê³„ì‚°ê¸° : ");
+            printf("°è»ê±â : ");
             if (scanf("%lf %c %lf", &a, &op, &b) != 3) {
-                printf("ì…ë ¥ ì˜¤ë¥˜: í˜•ì‹ì„ í™•ì¸í•˜ì„¸ìš”.\n");
+                printf("°è»êÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
                 return 1;
             }
 
@@ -48,7 +48,7 @@ int main() {
                 case '/': result = divide(a, b); break;
                 case '^': result = squ(a, b); break;
                 default:
-                    printf("ì˜ëª»ëœ ì—°ì‚°ìë¡œ ì¸í•œ ì˜¤ë¥˜ '%c'.\n", op);
+                    printf("¿¬»êºÎÈ£¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. '%c'.\n", op);
                     return 1;
             }
 
@@ -56,20 +56,20 @@ int main() {
             first = 0;
         }
         else {
-            printf("ê³„ì‚°ê¸° (ì´ˆê¸°í™” c, ì¢…ë£Œ q): ");
+            printf("°è»ê±â (ÃÊ±âÈ­ c, Á¾·á q): ");
             scanf(" %c", &op);
             if (op == 'q' || op == 'Q') {
-                printf("ê³„ì‚°ê¸°ë¥¼ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
+                printf("°è»ê±â¸¦ Á¾·áÇÕ´Ï´Ù.\n");
                 break;
             }
             else if (op == 'c' || op == 'C') {
                 first = 1;
-                printf("ì´ˆê¸°í™” ë˜ì—ˆìŠµë‹ˆë‹¤.\n");
+                printf("ÃÊ±âÈ­µÇ¾ú½À´Ï´Ù.\n");
                 continue;
             }
 
             if (scanf("%lf", &b) != 1) {
-                printf("ì…ë ¥ ì˜¤ë¥˜: ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”.\n");
+                printf("°è»êÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
                 break;
             }
 
@@ -80,7 +80,7 @@ int main() {
                 case '/': result = divide(result, b); break;
                 case '^': result = squ(result, b); break;
                 default:
-                    printf("ì˜ëª»ëœ ì—°ì‚°ìë¡œ ì¸í•œ ì˜¤ë¥˜ '%c'.\n", op);
+                    printf("¿¬»êºÎÈ£¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù. '%c'.\n", op);
                     continue;
             }
 
